@@ -16,7 +16,7 @@ typedef unsigned char  uint8_t;
 
 void createBMPHeader(uint8_t * header, int width ,int height, int bgr_size);
 
-bool convertYV12ToBGR24_Table(uint8_t * pYUV, uint8_t * pBGR24,int width,int height);
+bool convertYV12ToBGR24(uint8_t * pYUV, uint8_t * pBGR24,int width,int height);
 
 void convertNV12ToYV12(uint8_t * nv12bytes, uint8_t * i420bytes, int width, int height);
 

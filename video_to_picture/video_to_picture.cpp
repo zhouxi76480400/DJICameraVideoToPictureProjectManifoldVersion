@@ -69,7 +69,7 @@ int convert_nv12_to_bmp_buffer(int width_pixel, int height_pixel, char * in_buff
         // convert YV12 to BGR
         int bgr_size = width_pixel * height_pixel * 3;
         char * bgrbuffer = (char *) malloc(bgr_size + 1);
-        bool isSuccessToConvertBGR = convertYV12ToBGR24_Table((uint8_t *)yv12buffer,(uint8_t *)bgrbuffer,width_pixel,height_pixel);
+        bool isSuccessToConvertBGR = convertYV12ToBGR24((uint8_t *)yv12buffer,(uint8_t *)bgrbuffer,width_pixel,height_pixel);
         if(isSuccessToConvertBGR) {
             delete [] yv12buffer;
             yv12buffer = NULL;
