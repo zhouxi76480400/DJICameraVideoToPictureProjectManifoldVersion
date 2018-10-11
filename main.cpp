@@ -64,14 +64,6 @@ int main(int argc, char **argv) {
     return 0;
 }
 
-bool check_is_root() {
-    bool isRoot = true;
-    if(0 != getuid()){
-        isRoot = false;
-    }
-    return isRoot;
-}
-
 void writeToFile() {
     int bmp_size = Bmp_FileHeader_Size + Bmp_Info_Size + DJI_CAM_HEIGHT * DJI_CAM_WIDTH * 3;
     char * bmpBuffer = new char[bmp_size];
@@ -86,4 +78,12 @@ void writeToFile() {
     }
     delete [] bmpBuffer;
     bmpBuffer = NULL;
+}
+
+bool check_is_root() {
+    bool isRoot = true;
+    if(0 != getuid()){
+        isRoot = false;
+    }
+    return isRoot;
 }

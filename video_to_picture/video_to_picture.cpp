@@ -10,6 +10,11 @@
 
 bool isFileExist(string path);
 
+int convert_dji_camera_nv12_to_bmp(string nv12_path, string save_path) {
+    int status = convert_nv12_to_bmp(1280,720,nv12_path,save_path);
+    return status;
+}
+
 int convert_nv12_to_bmp(int width_pixel, int height_pixel, string nv12_path, string save_path){
     int status = convert_nv_12_to_bmp_status_failed;
     int file_exist = isFileExist(nv12_path);
@@ -84,11 +89,6 @@ int convert_nv12_to_bmp_buffer(int width_pixel, int height_pixel, char * in_buff
     }else {
         status = convert_nv_12_to_bmp_status_file_not_exist_or_not_permission;
     }
-    return status;
-}
-
-int convert_dji_camera_nv12_to_bmp(string nv12_path, string save_path) {
-    int status = convert_nv12_to_bmp(1280,720,nv12_path,save_path);
     return status;
 }
 
