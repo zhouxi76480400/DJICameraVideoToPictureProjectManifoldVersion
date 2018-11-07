@@ -4,6 +4,8 @@ project(DJICameraVideoToPictureProjectManifoldVersion)
 add_compile_options(-std=c++11)
 set(CMAKE_CXX_STANDARD 11)
 
+SET(CMAKE_CXX_FLAGS -pthread)
+
 include_directories(${CMAKE_SOURCE_DIR}/include)
 
 add_executable(DJICameraVideoToPictureProjectManifoldVersion
@@ -15,5 +17,5 @@ add_executable(DJICameraVideoToPictureProjectManifoldVersion
         )
 
 target_link_libraries(DJICameraVideoToPictureProjectManifoldVersion
-        ${CMAKE_SOURCE_DIR}/lib/libdcam.so
+#        ${CMAKE_SOURCE_DIR}/lib/libdcam.so
         )
